@@ -30,7 +30,7 @@ import android.widget.TextView;
 import androidx.annotation.StringRes;
 
 import com.android.dialer.R;
-import com.android.dialer.theme.base.ThemeComponent;
+import com.google.android.material.color.MaterialColors;
 
 public class EmptyContentView extends LinearLayout implements View.OnClickListener {
 
@@ -71,6 +71,9 @@ public class EmptyContentView extends LinearLayout implements View.OnClickListen
     descriptionView = (TextView) findViewById(R.id.empty_list_view_message);
     actionView = findViewById(R.id.empty_list_view_action);
     actionView.setOnClickListener(this);
+
+    imageView.setImageTintList(
+        ColorStateList.valueOf(MaterialColors.getColor(imageView, R.attr.colorIconSecondary)));
   }
 
   public void setDescription(int resourceId) {
